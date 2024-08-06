@@ -13,3 +13,7 @@ serde_json = "1.0"
 log = "0.4"
 env_logger = "0.10"
 mio = "=0.8.8"
+openssl = { version = "0.10", features = ["vendored"] }
+
+[patch.crates-io]
+openssl-sys = { version = "0.9", features = ["vendored"] }
