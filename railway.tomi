@@ -1,8 +1,8 @@
 [build]
 builder = "nixpacks"
-buildCommand = "cargo build --release"
+buildCommand = "apt-get update && apt-get install -y pkg-config libssl-dev musl-tools && rustup target add x86_64-unknown-linux-musl && cargo build --release --target x86_64-unknown-linux-musl"
 
 [deploy]
-startCommand = "cargo run --release"
+startCommand = "cargo run --release --target x86_64-unknown-linux-musl"
 restartPolicyType = "on_failure"
 restartPolicyMaxRetries = 10
